@@ -1,0 +1,60 @@
+# Query
+
+type Query {
+    bookById(id: ID): Book,
+    allMovies: Movie
+}
+
+mutation CreateMovie($dirs:[ Director]){
+}
+
+
+
+## Interfaces
+interface Person {
+    id: Float!
+    firstName: String!
+    lastName: String!
+    birthName: String
+}
+
+type Movie {
+    id: Float
+    title: String
+    directors: [Director]
+    actors:[Actors]
+    releaseDate: String
+}
+
+type Director  implements Person {
+    id: Float!
+    firstName: String!
+    lastName: String!
+    birthName: String
+    cantActua: Int
+}
+
+type Actors  implements Person{
+    id: Float!
+    firstName: String!
+    lastName: String!
+    birthName: String
+    cantActua: Int
+}
+
+type Book {
+    id: ID
+    name: String
+    pageCount: Int
+    author: Author
+}
+
+type Author {
+    id: ID
+    firstName: String
+    lastName: String
+}
+
+#mutation {
+#    __
+#}
